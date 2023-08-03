@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import {Link as RouterLink} from 'react-router-dom'
 import {Flex, Heading, Box, Icon, Link} from '@chakra-ui/react';
 import {HiShoppingBag, HiUser, HiOutlineMenuAlt3} from "react-icons/hi"
 
@@ -10,7 +10,7 @@ const MenuItem = ({children , url}) => {
 
     return(
 
-        <Link href={url} fontSize="sm"
+        <Link as={RouterLink} to={url} fontSize="sm"
             letterSpacing="wide"
             color="whiteAlpha.600"
             fontWeight="bold"
@@ -54,8 +54,8 @@ export const Header = () => {
                     >
 
                     <Link 
-
-                        href='/' 
+                        as={RouterLink}
+                        to='/' 
                         _hover={{color:"grey.500" , textDecor:"none"}}>
                         E-commerce
 
