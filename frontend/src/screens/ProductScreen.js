@@ -11,6 +11,8 @@ import {
 
 } from "@chakra-ui/react";
 import { useParams, Link as RouterLink } from "react-router-dom";
+import { useState,useEffect } from "react";
+import axios from 'axios'
 
 
 import { products } from "../products";
@@ -23,9 +25,23 @@ export const ProductScreen = () => {
 
     const {id} = useParams();
 
-    const product = products.find(product => product._id === +id)
+    // const product = products.find(product => product._id === +id)
     
+    const [product, setProduct] = useState({});
 
+    useEffect(() => {
+
+      const fetchProduct = async () =>{
+
+        const {data} = await axios.get(`/api/products/${id}`);
+
+        setProduct(data);
+      
+       }
+
+       fetchProduct()
+
+    }, [])
 
     return (
 
