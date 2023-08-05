@@ -11,14 +11,15 @@ import {
 
 } from "@chakra-ui/react";
 import { useParams, Link as RouterLink } from "react-router-dom";
-import { useState,useEffect } from "react";
-import axios from 'axios'
+import { Children, useEffect } from "react";
+import {useSelector, useDispatch} from 'react-redux'
 
 
 import { products } from "../products";
 import { Rating } from "../component/Rating";
-
-
+import { listProductDetails } from "../actions/productActions";
+import { Loader } from "../component/Loader";
+import {Message} from '../component/Message'
 
 
 export const ProductScreen = () => {
@@ -27,21 +28,18 @@ export const ProductScreen = () => {
 
     // const product = products.find(product => product._id === +id)
     
-    const [product, setProduct] = useState({});
+    const dispatch = useDispatch()
+
+    const productDetails = useSelector((state) => state.productDetails)
+
+    const {loading, product, error} = productDetails
 
     useEffect(() => {
 
-      const fetchProduct = async () =>{
+      dispatch(listProductDetails(id))
+     
 
-        const {data} = await axios.get(`/api/products/${id}`);
-
-        setProduct(data);
-      
-       }
-
-       fetchProduct()
-
-    }, [])
+    }, [id,])
 
     return (
 
@@ -50,7 +48,8 @@ export const ProductScreen = () => {
             <Button as={RouterLink} to="/" colorScheme="gray">Go Back</Button>
 
           </Flex>
-          <Grid templateColumns={{base:"1fr", md:"2fr 1fr"}} gap="10">
+          {
+            loading ? (<Loader/>) : error ? (<Message type="error">{error}</Message>) : (<Grid templateColumns={{base:"1fr", md:"2fr 1fr"}} gap="10">
 
             {/* Column 1 */}
             <Image src={product.img} alt={product.name} borderRadius="md"></Image>
@@ -99,7 +98,10 @@ export const ProductScreen = () => {
 
                 <Button bgColor="gray.800" textTransform="uppercase" letterSpacing="wide" colorScheme="teal" my="2"disabled={product.countInStock === 0}>Add to cart</Button>
             </Flex>
-          </Grid>
+          </Grid>)
+
+
+          }
         </>
     )
 };
