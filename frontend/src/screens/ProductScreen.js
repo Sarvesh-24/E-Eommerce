@@ -44,11 +44,11 @@ export const ProductScreen = () => {
       dispatch(listProductDetails(id))
      
 
-    }, [id,])
+    }, [id, dispatch])
 
     const addToCartHandler = () => {
 
-        navigate(`/cart/${id}?qty${qty}`)
+        navigate(`/cart/${id}?qty=${qty}`)
     }
 
     return (
