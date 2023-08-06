@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { User } from "./userModel";
+
 
 
 const orderModel = mongoose.Schema({
@@ -69,7 +69,7 @@ const orderModel = mongoose.Schema({
 
         type: Boolean,
         required: true,
-        defaulr: false
+        default: false
     },
 
     paidAt:{

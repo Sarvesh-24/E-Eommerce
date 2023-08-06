@@ -1,6 +1,6 @@
-const products = [
+export const products = [
 	{
-		_id: 1 ,
+		
 		name: 'Red chair',
 		img: '/images/img_red',
 		description:
@@ -13,7 +13,7 @@ const products = [
 		numReviews: 4,
 	},
 	{
-		_id: 2 ,
+	
 		name: 'Desmond Floor Lamp',
 		img: '/images/Desmond_Floor_Lamp_2.jpg',
 
@@ -27,7 +27,7 @@ const products = [
 		numReviews: 4,
 	},
 	{
-		_id: 3 ,
+		
 		name: 'Pashe Fabric Accent Chair In Teal Colour',
 		img: '/images/Pashe_Dining_Chair_TL.jpg',
 		
@@ -41,7 +41,7 @@ const products = [
 		numReviews: 3.8,
 	},
 	{
-		_id: 4 ,
+
 		name: 'Madden',
 		img: '/images/Madden_Shoe_Cabinet_Mahogany_3.jpg',
 		
@@ -55,7 +55,7 @@ const products = [
 		numReviews: 12,
 	},
 	{
-		_id: 5,
+	
 		name: 'Janet 2 Fabric Loveseat ',
 		img: '/images/Janet_Lapis_Blue_2.jpg',
 		description:
@@ -68,7 +68,7 @@ const products = [
 		numReviews: 8,
 	},
 	{
-		_id: 6,
+		
 		name: 'Epsilon Rectangular Solid Wood',
 		img: '/images/Epsilon_Coffe_Table_MH_03.jpg',
 		
@@ -82,7 +82,7 @@ const products = [
 		numReviews: 3,
 	},
 	{
-		_id: 7,
+		
 		name: 'Speckle Table Lamp Round',
 		img: '/images/Speckle_Table_Lamp_Round_2.jpg',
 		
@@ -96,7 +96,7 @@ const products = [
 		numReviews: 3,
 	},
 	{
-		_id: 8,
+		
 		name: 'Kaya Table Lamp',
 		img: '/images/Kaya_Table_Lamp_1.jpg',
 		
@@ -112,6 +112,6 @@ const products = [
 ];
 
 
-module.exports = products;
+// export default products;
 
 
