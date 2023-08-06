@@ -7,6 +7,7 @@ import  {Footer} from './component/Footer'
 import { HomeScreen } from './screens/HomeScreen'
 import { ProductScreen } from './screens/ProductScreen'
 import { CartScreen } from './screens/CartScreen'
+import {LoginScreen} from './screens/LoginScreen'
 
 
 export const App = () => {
@@ -35,6 +36,7 @@ export const App = () => {
 
                     <Route path='/cart/:id' element={<CartScreen/>}/>
                     <Route path='/cart' element={<CartScreen/>}/>
+                    <Route path='/login' element={<LoginScreen/>} />
                 </Routes>
 
                 </Flex>

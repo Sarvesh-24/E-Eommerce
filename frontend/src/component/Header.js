@@ -82,7 +82,7 @@ export const Header = () => {
                     width={{base:'full' , md:"auto"}}
                     >
 
-                    <MenuItem url="/">
+                    <MenuItem url="/cart">
 
                         <Flex alignItems="center">
                            <Icon as={HiShoppingBag} w="4"
@@ -92,7 +92,7 @@ export const Header = () => {
 
                         </Flex>
                     </MenuItem>
-                    <MenuItem url="/">
+                    <MenuItem url="/login">
 
                         <Flex alignItems="center">
                            <Icon as={HiUser} 
