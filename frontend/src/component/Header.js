@@ -5,7 +5,7 @@ import {Flex, Heading, Box, Icon, Link,Menu,MenuButton,Button,MenuItem,MenuList}
 import {HiShoppingBag, HiUser, HiOutlineMenuAlt3} from "react-icons/hi"
 import { IoChevronDown } from 'react-icons/io5';
 
-import {logout} from '../actions/userAction'
+import {logout, register} from '../actions/userAction'
 
 
 
@@ -38,6 +38,8 @@ export const Header = () => {
     const dispatch = useDispatch();
 
     const userLogin = useSelector(state => state.userLogin);
+
+	
 
     const {userInfo} = userLogin;
 
