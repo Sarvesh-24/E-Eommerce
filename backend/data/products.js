@@ -2,7 +2,7 @@ export const products = [
 	{
 		
 		name: 'Red chair',
-		img: '/images/img_red',
+		img: '/images/img_red.png',
 		description:
 			'Product Dimensions : 103.0 cm x 72.0 cm x 76.0cm Country of Origin : INDIA',
 		brand: 'Lebowski',
