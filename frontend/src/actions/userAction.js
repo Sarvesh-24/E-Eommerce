@@ -107,6 +107,7 @@ export const getUserDetails = () => {
       const {userLogin:{userInfo}} = getState()
 
 
+
       const config = {
         header: {
           Authorization: `Bearer${userInfo.token}`
@@ -144,8 +145,10 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     try {
         
         dispatch({
-            type:USER_DETAILS_REQUEST
+            type:USER_UPDATE_PROFILE_REQUEST
         })
+
+        const {userLogin:{userInfo}} = getState()
 
         
       const config = {

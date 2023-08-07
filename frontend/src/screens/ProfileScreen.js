@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
 import { IoWarning } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
-import { listMyOrders } from "../actions/orderActions";
+// import { listMyOrders } from "../actions/orderAction";
 import { getUserDetails, updateUserProfile } from "../actions/userAction";
 import { FormContainer } from "../component/FormContainer";
 import { Loader } from "../component/Loader";
@@ -45,8 +45,8 @@ export const ProfileScreen = () => {
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
   const { success } = userUpdateProfile;
 
-  const orderMyList = useSelector((state) => state.orderMyList);
-  const { loading: loadingOrders, error: errorOrders, orders } = orderMyList;
+  // const orderMyList = useSelector((state) => state.orderMyList);
+  // const { loading: loadingOrders, error: errorOrders, orders } = orderMyList;
 
   useEffect(() => {
     if (!userInfo) {
@@ -54,7 +54,7 @@ export const ProfileScreen = () => {
     } else {
       if (!user.name) {
         dispatch(getUserDetails());
-        dispatch(listMyOrders());
+        // dispatch(listMyOrders());
       } else {
         setName(user.name);
         setEmail(user.email);
@@ -146,7 +146,7 @@ export const ProfileScreen = () => {
       </Flex>
 
       {/* Order */}
-      <Flex direction="column">
+      {/* <Flex direction="column">
         <Heading as="h2" mb="4">
           My Orders
         </Heading>
@@ -202,7 +202,7 @@ export const ProfileScreen = () => {
             </Tbody>
           </Table>
         )}
-      </Flex>
+      </Flex> */}
     </Grid>
   );
 };

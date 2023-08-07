@@ -29,7 +29,7 @@ export const LoginScreen = () => {
   const [password, setPassword] = useState('');
 
   let [searchParam] = useSearchParams();
-  let  redirect = searchParam.get('redirect') || '/'
+  let  redirect = searchParam.get('redirect') || '/shipping'
 
   const userLogin = useSelector((state) => state.userLogin);
 
