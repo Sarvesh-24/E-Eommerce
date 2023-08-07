@@ -17,6 +17,7 @@ dotenv.config({ path : "./backend/.env"} );
 
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
+import orderRoutes from './routes/orderRoute.js'
 
 import {errorHandler, notFound} from './middlewares/errorMiddleware.js'
 
@@ -28,6 +29,7 @@ app.use(express.json()); // body parsing
 
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
+app.use('api/orders/', orderRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
